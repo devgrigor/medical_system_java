@@ -4,28 +4,39 @@ import java.awt.event.*;
 
 class PatientRegistration implements ActionListener {
 	JPanel myPanel;
-	PatientRegistration (JPanel panel) {
+	JTextArea ta;
+	int patientCount = 0;
+	PatientCatalog catalog;
+
+	PatientRegistration (JPanel panel, PatientCatalog catalog) {
 		this.myPanel = panel;
+		this.catalog = catalog;
 		this.initButton();
 	}
 
-	public void initButton() {
-		JButton send = new JButton("Send");
-        JButton reset = new JButton("Reset");
-        send.addActionListener(this);
-        reset.addActionListener(this);
+	public void initButton() {		
+		JLabel label = new JLabel("Personal data");
+		JButton send = new JButton("Register");
+		JButton reset = new JButton("Reset");
+		send.addActionListener(this);
+		reset.addActionListener(this);
+		this.ta = new JTextArea();
 
-        this.myPanel.add(send);
-        this.myPanel.add(reset);
+		this.myPanel.add(label);
+		// this.myPanel.add(reset);
+		this.myPanel.add(send);
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("some  action performed" + e);
-		System.out.println(e.getActionCommand());
+		System.out.println("some  action performed ==================================");
+		
 		String params = e.paramString();
-		if(params.contains("Send")) {
-			System.out.println("Send was pushed");
+		if(params.contains("Register")) {
+			System.out.println(ta.getText());
+			Patient p = new Patient(this.patientCount++, ta.getText());
+			this.catalog.addPateint(p);
 		}
 
 		if(params.contains("Reset")) {
