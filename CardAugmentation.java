@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.*;
 
 class CardAugmentation implements ActionListener {
 	Container myPanel;
@@ -43,6 +44,7 @@ class CardAugmentation implements ActionListener {
 
 		if(params.contains("CardAugmentation")) {
 			System.out.println("Card is augmented for " + selectedBook);
+			new CardAugmentationModel("content", new Date());
 		}
     }
 }
