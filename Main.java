@@ -47,9 +47,9 @@ class Main {
 
         //Adding Components to the frame.
         frame.getContentPane().add(BorderLayout.CENTER, patientReg.ta); 
-        frame.getContentPane().add(BorderLayout.PAGE_START, panel);
+        frame.getContentPane().add(BorderLayout.WEST, panel);
         frame.getContentPane().add(BorderLayout.EAST, panel4);
-        frame.getContentPane().add(BorderLayout.WEST, panel2);
+        frame.getContentPane().add(BorderLayout.PAGE_START, panel2);
         frame.getContentPane().add(BorderLayout.PAGE_END, panel3);
         
         

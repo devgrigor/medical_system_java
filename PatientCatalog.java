@@ -19,7 +19,7 @@ public class PatientCatalog {
      */
     public void addPateint(Patient patient) {
         this.myMap.put(patient.patientID, patient);
-        System.out.println("Patient added");
+        System.out.println("Patient added " + patient.patientID);
     }
 
 }

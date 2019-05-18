@@ -9,7 +9,11 @@ public class Card {
     /**
      * Default constructor
      */
-    public Card() {
+    public Card(Integer cardID, Integer patientID, Integer disieaseID, Integer doctorID) {
+        this.cardID = cardID;
+        this.patientID = patientID;
+        this.diseaseID = disieaseID;
+        this.doctorID = doctorID;
     }
 
     /**

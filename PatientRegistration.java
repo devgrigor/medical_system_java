@@ -22,10 +22,8 @@ class PatientRegistration implements ActionListener {
 		reset.addActionListener(this);
 		this.ta = new JTextArea();
 
-		this.myPanel.add(label);
-		// this.myPanel.add(reset);
 		this.myPanel.add(send);
-		
+		this.myPanel.add(label);	
 	}
 
 	@Override
@@ -42,5 +40,5 @@ class PatientRegistration implements ActionListener {
 		if(params.contains("Reset")) {
 			System.out.println("Reset was clicked");
 		}
-    }
+  }
 }
